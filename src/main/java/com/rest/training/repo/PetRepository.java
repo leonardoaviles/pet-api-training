@@ -2,6 +2,7 @@ package com.rest.training.repo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.rest.training.domain.Pet;
@@ -24,7 +25,7 @@ public class PetRepository {
 		return pet;
 	}
 
-	public Pet findById(Integer id) {
-		return petsDB.get(id);
+	public Optional<Pet> findById(Integer id) {
+		return Optional.ofNullable(petsDB.get(id));
 	}
 }
