@@ -35,7 +35,6 @@ public class PetController {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response findById(@PathParam(value = "id")Integer id) throws PetNotFoundException {
-		return Response.ok(petService.findById(id))
-			.build();
+		return Response.ok(petService.findById(id)).build();
 	}
 }
