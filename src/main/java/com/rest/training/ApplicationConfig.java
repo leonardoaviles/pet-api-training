@@ -29,8 +29,6 @@ public class ApplicationConfig  implements Feature {
                 serviceLocator.getService(DynamicConfigurationService.class);
         Populator populator = dcs.getPopulator();
         try {
-            // Populator - populate HK2 service locators from inhabitants files
-            // ClasspathDescriptorFileFinder - find files from META-INF/hk2-locator/default
             populator.populate(
                     new ClasspathDescriptorFileFinder(this.getClass().getClassLoader()),
                     new DuplicatePostProcessor());
